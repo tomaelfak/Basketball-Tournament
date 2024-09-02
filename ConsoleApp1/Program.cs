@@ -8,6 +8,10 @@ var tournament = new Tournament();
 
 var groupList = DataLoader.LoadGroups();
 
+var teams = DataLoader.CreateTeamMap(groupList);
+
+ExibitionLoader.LoadExhibitions("../Data/exibitions.json", teams);
+
 
 Console.WriteLine("-------------------------------------------------");
 

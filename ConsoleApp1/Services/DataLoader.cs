@@ -21,5 +21,18 @@ namespace ConsoleApp1.Services
 
             return groupList;
         }
+
+        public static Dictionary<string, BasketballTeam> CreateTeamMap(List<Group> groupList)
+        {
+            var teams = new Dictionary<string, BasketballTeam>();
+            foreach (var group in groupList)
+            {
+                foreach (var team in group.Teams)
+                {
+                    teams[team.Team] = team;
+                }
+            }
+            return teams;
+        }
     }
 }

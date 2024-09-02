@@ -24,6 +24,18 @@ namespace ConsoleApp1.Domain
 
         public int Form { get; set; } = 0;
 
+        private Queue<char> formQueue = new Queue<char>();
+
+        public void UpdateForm(char result)
+        {
+            if(formQueue.Count == 5)
+            {
+                formQueue.Dequeue();
+            }
+            formQueue.Enqueue(result);
+            Form = formQueue.Count(c => c == 'W') - formQueue.Count(c => c == 'L');
+        }
+
         
 
         public int PointsDifference () => ScoredPoints - ConcededPoints;

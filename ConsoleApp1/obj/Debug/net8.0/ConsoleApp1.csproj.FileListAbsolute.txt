@@ -12,3 +12,4 @@ D:\Moje_stvari\Codebehind - Basketball project\ConsoleApp1\obj\Debug\net8.0\refi
 D:\Moje_stvari\Codebehind - Basketball project\ConsoleApp1\obj\Debug\net8.0\ConsoleApp1.pdb
 D:\Moje_stvari\Codebehind - Basketball project\ConsoleApp1\obj\Debug\net8.0\ConsoleApp1.genruntimeconfig.cache
 D:\Moje_stvari\Codebehind - Basketball project\ConsoleApp1\obj\Debug\net8.0\ref\ConsoleApp1.dll
+D:\Moje_stvari\Codebehind - Basketball project\ConsoleApp1\obj\Debug\net8.0\ConsoleApp1.sourcelink.json

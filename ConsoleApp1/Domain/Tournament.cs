@@ -52,7 +52,7 @@ namespace ConsoleApp1.Domain
             var secondPlaceTeams = new List<BasketballTeam>();
             var thirdPlaceTeams = new List<BasketballTeam>();
 
-            // Extract top three teams from each group
+
             foreach (var group in groups)
             {
                 var rankedTeams = group.RankTeams();
@@ -61,12 +61,12 @@ namespace ConsoleApp1.Domain
                 if (rankedTeams.Count > 2) thirdPlaceTeams.Add(rankedTeams[2]);
             }
 
-            // Rank the first, second, and third place teams
+
             var rankedFirstPlaceTeams = RankTopTeams(firstPlaceTeams);
             var rankedSecondPlaceTeams = RankTopTeams(secondPlaceTeams);
             var rankedThirdPlaceTeams = RankTopTeams(thirdPlaceTeams);
 
-            // Print the final standings
+
             Console.WriteLine("Prvoplasirani timovi:");
             for (int i = 0; i < rankedFirstPlaceTeams.Count; i++)
             {
@@ -104,7 +104,7 @@ namespace ConsoleApp1.Domain
             var secondPlaceTeams = new List<BasketballTeam>();
             var thirdPlaceTeams = new List<BasketballTeam>();
 
-            // Extract top three teams from each group
+
             foreach (var group in groups)
             {
                 var rankedTeams = group.RankTeams();
@@ -113,12 +113,12 @@ namespace ConsoleApp1.Domain
                 if (rankedTeams.Count > 2) thirdPlaceTeams.Add(rankedTeams[2]);
             }
 
-            // Rank the first, second, and third place teams
+
             var rankedFirstPlaceTeams = RankTopTeams(firstPlaceTeams);
             var rankedSecondPlaceTeams = RankTopTeams(secondPlaceTeams);
             var rankedThirdPlaceTeams = RankTopTeams(thirdPlaceTeams);
 
-            // Create pots
+
             var potD = rankedFirstPlaceTeams.Take(2).ToList();
             var potE = rankedFirstPlaceTeams.Skip(2).Take(1).Concat(rankedSecondPlaceTeams.Take(1)).ToList();
             var potF = rankedSecondPlaceTeams.Skip(1).Take(2).ToList();
@@ -127,11 +127,8 @@ namespace ConsoleApp1.Domain
             return (potD, potE, potF, potG);
         }
 
-        public void PrintPots(
-    List<BasketballTeam> potD,
-    List<BasketballTeam> potE,
-    List<BasketballTeam> potF,
-    List<BasketballTeam> potG)
+        public void PrintPots(List<BasketballTeam> potD, List<BasketballTeam> potE,
+        List<BasketballTeam> potF, List<BasketballTeam> potG)
         {
             void PrintPot(string potName, List<BasketballTeam> pot)
             {
@@ -149,14 +146,12 @@ namespace ConsoleApp1.Domain
             PrintPot("Šešir G", potG);
         }
 
-        public List<(BasketballTeam, BasketballTeam)> FormQuarterfinalPairs(
-    List<BasketballTeam> potD, List<BasketballTeam> potE,
-    List<BasketballTeam> potF, List<BasketballTeam> potG)
+        public List<(BasketballTeam, BasketballTeam)> FormQuarterfinalPairs(List<BasketballTeam> potD, List<BasketballTeam> potE, List<BasketballTeam> potF, List<BasketballTeam> potG)
         {
             var quarterfinalPairs = new List<(BasketballTeam, BasketballTeam)>();
             var random = new Random();
 
-            // Helper function to attempt forming pairs with backtracking
+
             bool TryFormPairs(List<BasketballTeam> pot1, List<BasketballTeam> pot2, List<(BasketballTeam, BasketballTeam)> pairs)
             {
                 if (pot1.Count == 0) return true; // All teams paired successfully
@@ -182,7 +177,7 @@ namespace ConsoleApp1.Domain
                     }
                 }
 
-                return false; // Unable to pair successfully
+                return false;
             }
 
 
@@ -192,13 +187,13 @@ namespace ConsoleApp1.Domain
 
 
 
-                // Pair teams from Pot D with Pot G
+
                 if (!TryFormPairs(potD, potG, quarterfinalPairs))
                 {
                     return false;
                 }
 
-                // Pair teams from Pot E with Pot F
+
                 if (!TryFormPairs(potE, potF, quarterfinalPairs))
                 {
                     return false;
@@ -230,7 +225,7 @@ namespace ConsoleApp1.Domain
         {
             var semifinalPairs = new List<(BasketballTeam, BasketballTeam)>();
 
-            // Ensure there are enough results to form semifinals
+
             if (quarterfinalResults.Count < 4)
             {
                 throw new ArgumentException("Not enough quarterfinal results to form semifinals.");
@@ -289,7 +284,7 @@ namespace ConsoleApp1.Domain
             Console.WriteLine($"    Bronza: {bronze.Team}");
         }
 
-        public void SimulateBronzeAndGoldMatches( List<(BasketballTeam, BasketballTeam, int, int)> semiFinalWinners)
+        public void SimulateBronzeAndGoldMatches(List<(BasketballTeam, BasketballTeam, int, int)> semiFinalWinners)
         {
             var bronzeMatch = new Match(semiFinalWinners[0].Item2, semiFinalWinners[1].Item2);
             var bronzeMatchResult = bronzeMatch.SimulateKnockout();
