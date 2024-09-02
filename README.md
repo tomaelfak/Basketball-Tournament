@@ -1,11 +1,11 @@
 ﻿# Basketball-Tournament
 
-#Grupna faza
+# Grupna faza
 Grupe i timovi su dati u groups.json fajlu u sklopu git repozitorijuma zadatka. Date su informacije o imenu zemlje, ISO-3166 kodovi i FIBA rang pre početka Olimpijskih igara.
 
 Potrebno je simulirati rezultat svih utakmica grupne faze i konačno timove u okviru grupe rangirati po propozicijama takmičenja. Rezultate utakmica odrediti tako da verovatnoća pobede i poraza tima bude u korelaciji sa razlikom u njihovim pozicijama na FIBA rang listi.
 
-#Pravila grupne faze su:
+# Pravila grupne faze su:
 Grupna faza se sastoji od toga da svaki tim igra sa preostala tri tima iz svoje grupe. Timovi dobijaju:
 2 boda za pobedu,
 1 bod za poraz,
@@ -35,7 +35,7 @@ Konačan plasman u grupama:
         3. Grčka       2 / 1 / 4 / 233 / 241 / -8
         4. Španija     2 / 1 / 4 / 249 / 257 / -8
     ...
-#Žreb
+# Žreb
 Timovi koji su se kvalifikovali u četvrtfinale biće podeljeni u četiri šešira:
 
 Šešir D: Timovi sa rangom 1 i 2.
@@ -70,7 +70,7 @@ Eliminaciona faza:
     SAD - Brazil
     Srbija - Australija
 
-#Eliminaciona faza
+# Eliminaciona faza
 Turnir se nastavlja standardnim formatom eliminacije, gde pobednici prolaze u polufinale, a gubitnici ispadaju. Pobednici polufinala idu u finale, dok gubitnici igraju za bronzanu medalju.
 
 Prikazati sve mečeve eliminacione faze po rundama (četvrtfinale, polufinale, utakmica za 3. mesto, finale). Nakon toga prikazati timove koji su osvojili medalje.
@@ -101,5 +101,5 @@ Medalje:
     1. SAD
     2. Francuska
     3. Srbija
-#Bonus
+# Bonus
 Kod određivanja verovatnoće pobednika uzeti u obzir i formu ekipe. Početna tačka za ovu kalkulaciju mogu biti podaci iz fajla exibitions.json u kome su dati rezultati 2 prijateljske utakmice za svaku ekipu. Formu prera;unavati kako turnir odmiče, a možete kao faktor forme uključiti i jačinu protivnika i razliku koju je ekipa ostvarila.
